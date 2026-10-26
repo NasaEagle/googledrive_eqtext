@@ -1,0 +1,9 @@
+<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><title>Text</title>
+<body style="font:20px sans-serif;text-align:center;padding-top:40px">
+<a id="go" style="display:inline-block;padding:18px 28px;background:#38761d;color:#fff;border-radius:12px;text-decoration:none">📱 Open Messages</a>
+<script>
+const p=new URLSearchParams(location.search),to=p.get('to')||'',body=p.get('body')||'';
+const ios=/iPhone|iPad|iPod/.test(navigator.userAgent);
+const url='sms:'+to+(ios?'&':'?')+'body='+encodeURIComponent(body);
+document.getElementById('go').href=url; location.href=url;
+</script>
